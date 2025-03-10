@@ -2,9 +2,9 @@
 
 ## bAIbysitter plugin
 
-config in agent configuration
+config in JSON agent configuration
 
- {
+` {
       "name": "sonic",
       "network": "testnet",
       "baibysitter": {
@@ -13,7 +13,7 @@ config in agent configuration
         "api_url": "http://localhost:8000"
       }
     },
-
+`
   
 
 ZerePy is an open-source Python framework designed to let you deploy your own agents on X, powered by multiple LLMs.
