@@ -4,8 +4,8 @@
 
 config in JSON agent configuration
 
-` {
 
+{
       "name": "sonic",
       
       "network": "testnet",
