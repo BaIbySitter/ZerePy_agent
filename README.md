@@ -74,6 +74,10 @@ Both middlewares work together to validate transactions **before execution**, en
 
 
 
+
+
+
+
 ZerePy is an open-source Python framework designed to let you deploy your own agents on X, powered by multiple LLMs.
 
 ZerePy is built from a modularized version of the Zerebro backend. With ZerePy, you can launch your own agent with
