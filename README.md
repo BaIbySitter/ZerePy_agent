@@ -1,5 +1,21 @@
 # ZerePy
 
+## bAIbysitter plugin
+
+config in agent configuration
+
+ {
+      "name": "sonic",
+      "network": "testnet",
+      "baibysitter": {
+        "enabled": true,
+        "name": "BaibySitter",
+        "api_url": "http://localhost:8000"
+      }
+    },
+
+  
+
 ZerePy is an open-source Python framework designed to let you deploy your own agents on X, powered by multiple LLMs.
 
 ZerePy is built from a modularized version of the Zerebro backend. With ZerePy, you can launch your own agent with
