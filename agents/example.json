@@ -97,7 +97,7 @@
       "baibysitter": {
         "enabled": true,
         "name": "BaibySitter",
-        "api_url": "https://api.baibysitter.com"
+        "api_url": "http://localhost:8000"
       }
     },
     {
