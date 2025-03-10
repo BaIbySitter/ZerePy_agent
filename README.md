@@ -1,66 +1,74 @@
 # ZerePy
 
-## bAIbysitter plugin
+## bAIbysitter Plugin
 
-config in JSON agent configuration
+### JSON Agent Configuration
 
-`
-
-      "name": "sonic",
-      
-      "network": "testnet",
-      
-      "baibysitter": {
-      
+```json
+{
+    "name": "sonic",
+    "network": "testnet",
+    "baibysitter": {
         "enabled": true,
-        
         "name": "BaibySitter",
-        
         "api_url": "http://localhost:8000"
-        
-      }      
+    }
+}
+```
 
-Middlewares de Baibysitter en ZerePy
-La integración utiliza dos middlewares principales:
-1. BaibysitterMiddleware (Base)
+---
 
-baibysitter_middleware.py
+## Baibysitter Middlewares in ZerePy
 
- 
- `       
- class BaibysitterMiddleware(ABC):
+The integration uses two main middlewares:
 
+### 1. `BaibysitterMiddleware` (Base)
+
+**File:** `baibysitter_middleware.py`
+
+```python
+from abc import ABC
+from config import BaibysitterConfig
+
+class BaibysitterMiddleware(ABC):
     def __init__(self, config: BaibysitterConfig):
-    
         self.config = config
-        
         self.name = config.name or self.__class__.__name__
-        
-`
-Clase base abstracta que:
--Maneja la configuración básica de Baibysitter
--Define el flujo de validación de transacciones
--Proporciona métodos abstractos para validación específica
-2. SonicMiddleware (Implementación)
+```
 
-sonic_middleware.py
+#### **Abstract base class that:**
+- Handles Baibysitter's basic configuration.
+- Defines the transaction validation flow.
+- Provides abstract methods for specific validation.
 
- `       
+---
+
+### 2. `SonicMiddleware` (Implementation)
+
+**File:** `sonic_middleware.py`
+
+```python
+from typing import List, Any, Dict
+from baibysitter_middleware import BaibysitterMiddleware
+
 class SonicMiddleware(BaibysitterMiddleware):
     def should_validate_action(self, action_name: str) -> bool:
         return action_name in ["transfer", "swap"]
- `       
     
     def _extract_transaction_data(self, action_name: str, params: List[Any]) -> Dict[str, Any]:
-        # Implementación específica para transacciones Sonic
-'
-Implementación específica que:
-Valida acciones de transferencia y swap
-Extrae y formatea datos de transacciones para Baibysitter
-Maneja la integración con contratos específicos de Sonic
-Los middlewares trabajan juntos para validar transacciones antes de su ejecución, asegurando la integridad y seguridad de las operaciones.
+        # Specific implementation for Sonic transactions
+        pass
+```
 
+#### **Specific implementation that:**
+- Validates transfer and swap actions.
+- Extracts and formats transaction data for Baibysitter.
+- Manages integration with Sonic-specific contracts.
 
+---
+
+### **How the Middlewares Work**
+Both middlewares work together to validate transactions **before execution**, ensuring the integrity and security of operations.
 
 
 
