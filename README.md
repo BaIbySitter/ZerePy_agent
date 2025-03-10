@@ -2,6 +2,8 @@
 
 ## bAIbysitter Plugin
 
+We developed a plugin to seamlessly integrate Zerepy with Baibysitter not just for the hackathon, but with the goal of making Baibysitter a security tool that helps Zerepy agents conduct safer transactions
+
 ### JSON Agent Configuration
 
 ```json
@@ -75,6 +77,9 @@ Both middlewares work together to validate transactions **before execution**, en
 
 
 ---
+
+<img width="856" alt="Image" src="https://github.com/user-attachments/assets/63f3a763-4ca2-44ae-8029-2d481119fb76" />
+
 
 
 
