@@ -5,14 +5,23 @@
 config in JSON agent configuration
 
 ` {
+
       "name": "sonic",
+      
       "network": "testnet",
+      
       "baibysitter": {
+      
         "enabled": true,
+        
         "name": "BaibySitter",
+        
         "api_url": "http://localhost:8000"
+        
       }
+      
     },
+    
 `
   
 
