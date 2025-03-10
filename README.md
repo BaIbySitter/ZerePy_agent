@@ -25,12 +25,17 @@ La integración utiliza dos middlewares principales:
 1. BaibysitterMiddleware (Base)
 
 baibysitter_middleware.py
-`
-'class BaibysitterMiddleware(ABC):
+
+ 
+ `       
+ class BaibysitterMiddleware(ABC):
+
     def __init__(self, config: BaibysitterConfig):
+    
         self.config = config
+        
         self.name = config.name or self.__class__.__name__
-'
+        
 `
 Clase base abstracta que:
 -Maneja la configuración básica de Baibysitter
